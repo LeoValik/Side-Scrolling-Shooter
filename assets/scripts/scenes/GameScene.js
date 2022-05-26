@@ -9,10 +9,6 @@ class GameScene extends Phaser.Scene {
         this.createBackground();
         this.player = new Player(this);
         this.enemies = new Enemies(this);
-
-        this.enemies.createEnemy();
-        this.enemies.createEnemy();
-        this.enemies.createEnemy();
     }
     update() {
         this.player.move();
