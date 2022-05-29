@@ -38,6 +38,11 @@ class MovableObject extends Phaser.GameObjects.Sprite {
                 this.timer.paused = false;
             }
         }
+
+        if (!status) {
+            this.emit('killed');
+        }
+
     }
     move() {
         this.body.setVelocityX(this.velocity);
