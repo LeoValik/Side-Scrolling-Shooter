@@ -3,7 +3,7 @@ class Enemies extends Phaser.Physics.Arcade.Group {
         super(scene.physics.world, scene);
         this.scene = scene;
         this.fires = new Fires(this.scene);
-        this.countMax = 5;
+        this.countMax = 4;
         this.countCreated = 0;
         this.countKilled = 0;
         
