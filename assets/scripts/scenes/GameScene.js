@@ -26,9 +26,11 @@ class GameScene extends Phaser.Scene {
         this.physics.add.overlap(this.player, this.enemies, this.onOverlap, undefined, this);
     }
     onOverlap(source, target) {
-        if (source !== this.player && target !== this.player) {
+        const enemy = [source, target].find(item =>  item.texture.key === 'enemy');
+        if (enemy) {
             ++this.score;
             this.scoreText.setText(`Score: ${this.score}`);
+            Boom.generate(this, enemy.x, enemy.y);
         }
         source.setAlive(false);
         target.setAlive(false);
