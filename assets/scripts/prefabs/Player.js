@@ -17,6 +17,24 @@ class Player extends Enemy {
                 y: 0.5
             }
         });
+
+        // Generate frameset
+        const frames = this.scene.anims.generateFrameNames('dragon', {
+            prefix: 'dragon',
+            start: 1,
+            end: 6
+        });
+
+        // Create a new animation based on the received frame
+        this.scene.anims.create({
+            key: 'fly',
+            frames,
+            frameRate: 10,
+            repeat: -1,
+        });
+
+        // Start animation
+        this.play('fly');
     }
     move() {
         this.body.setVelocityX(0);
